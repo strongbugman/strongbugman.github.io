@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"stronghugman.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="IT从业者或多或少都对数码产品感兴趣，作为其中一员，我就在这里水一水下我的开发环境，同时谈谈我对数码产品的一些感想。 设备我开发用的设备很简单：MBA+一台MiniPC（远程开发机器）。 笔记本目前在服役的是m1版本 16+256版本的，性能上没什么感觉（没遇到过瓶颈其实已经足够了），续航是真的顶，加上无风扇，air中的air，作为Mac入门机型也不贵，基本符合我对笔记本的期待，期待苹果后续的ai">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyDevENV">
+<meta property="og:url" content="https://stronghugman.github.io/2022/03/23/MyDevEnv/index.html">
+<meta property="og:site_name" content="My blogger">
+<meta property="og:description" content="IT从业者或多或少都对数码产品感兴趣，作为其中一员，我就在这里水一水下我的开发环境，同时谈谈我对数码产品的一些感想。 设备我开发用的设备很简单：MBA+一台MiniPC（远程开发机器）。 笔记本目前在服役的是m1版本 16+256版本的，性能上没什么感觉（没遇到过瓶颈其实已经足够了），续航是真的顶，加上无风扇，air中的air，作为Mac入门机型也不贵，基本符合我对笔记本的期待，期待苹果后续的ai">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-23T23:58:35.000Z">
+<meta property="article:modified_time" content="2022-03-24T10:40:18.055Z">
+<meta property="article:author" content="strongbugman">
+<meta property="article:tag" content="折腾">
+<meta property="article:tag" content="随想">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://stronghugman.github.io/2022/03/23/MyDevEnv/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>MyDevENV | My blogger</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">My blogger</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">My way, my world</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://stronghugman.github.io/2022/03/23/MyDevEnv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="strongbugman">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My blogger">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MyDevENV
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-03-24 07:58:35 / 修改时间：18:40:18" itemprop="dateCreated datePublished" datetime="2022-03-24T07:58:35+08:00">2022-03-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>IT从业者或多或少都对数码产品感兴趣，作为其中一员，我就在这里水一水下我的开发环境，同时谈谈我对数码产品的一些感想。</p>
+<h2 id="设备"><a href="#设备" class="headerlink" title="设备"></a>设备</h2><p>我开发用的设备很简单：MBA+一台MiniPC（远程开发机器）。</p>
+<h3 id="笔记本"><a href="#笔记本" class="headerlink" title="笔记本"></a>笔记本</h3><p>目前在服役的是m1版本 16+256版本的，性能上没什么感觉（没遇到过瓶颈其实已经足够了），续航是真的顶，加上无风扇，air中的air，作为Mac入门机型也不贵，基本符合我对笔记本的期待，期待苹果后续的air产品线。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">└&gt; neofetch</span><br><span class="line">                    &#x27;c.          *@*-MacBook-Air.local</span><br><span class="line">                 ,xNMM.          -------------------------------</span><br><span class="line">               .OMMMMo           OS: macOS 12.3 21E230 arm64</span><br><span class="line">               OMMM0,            Host: MacBookAir10,1</span><br><span class="line">     .;loddo:&#x27; loolloddol;.      Kernel: 21.4.0</span><br><span class="line">   cKMMMMMMMMMMNWMMMMMMMMMM0:    Uptime: 9 days, 4 hours, 19 mins</span><br><span class="line"> .KMMMMMMMMMMMMMMMMMMMMMMMWd.    Packages: 30 (brew)</span><br><span class="line"> XMMMMMMMMMMMMMMMMMMMMMMMX.      Shell: zsh 5.8</span><br><span class="line">;MMMMMMMMMMMMMMMMMMMMMMMM:       Resolution: 1440x900</span><br><span class="line">:MMMMMMMMMMMMMMMMMMMMMMMM:       DE: Aqua</span><br><span class="line">.MMMMMMMMMMMMMMMMMMMMMMMMX.      WM: Quartz Compositor</span><br><span class="line"> kMMMMMMMMMMMMMMMMMMMMMMMMWd.    WM Theme: Blue (Light)</span><br><span class="line"> .XMMMMMMMMMMMMMMMMMMMMMMMMMMk   Terminal: iTerm2</span><br><span class="line">  .XMMMMMMMMMMMMMMMMMMMMMMMMK.   Terminal Font: Monaco 12</span><br><span class="line">    kMMMMMMMMMMMMMMMMMMMMMMd     CPU: Apple M1</span><br><span class="line">     ;KMMMMMMMWXXWMMMMMMMk.      GPU: Apple M1</span><br><span class="line">       .cooc,.    .,coo:.        Memory: 2698MiB / 16384MiB</span><br></pre></td></tr></table></figure>
+
+<p>毕业后一直用的都是苹果家的笔记本，除了被工业设计征服外，MacOS也深得我心，但有一个问题就是太贵。一个是体现在笔记本天然更新换代周期太短了，我之前用的是16款mbp，当时是计划用5年，但用了3年多就已经能感觉到卡了，而且现在的手上的mba在很多方面甚至能吊打19年的16寸mbp，要知道mba发售价格可以比其少了一半多，满足需求和体验情况下，与其买顶配多用几年其实不如买便宜的入门款（甚至是二手）提前更新换代。贵的另外一个体现在内存硬盘升级价格上，当然苹果家的内存和硬盘用料都很足，但也远远不如自己组PC来的划算。再加上软件开发环境也远没Linux发行版用着舒适，所以我又购置了一台MiniPC来作为主要开发环境。</p>
+<h3 id="MiniPC"><a href="#MiniPC" class="headerlink" title="MiniPC"></a>MiniPC</h3><p>这台MiniPC规格上，5900hx + 32 + 1024，总的价格大概很便宜5000左右吧，而且硬盘和内存还可以继续扩展，其实就是笔记本的板U规格，正好功耗不高可以24小时开机来作为远程开发机。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">root@pve:~# neofetch</span><br><span class="line">         .://:`              `://:.            root@pve</span><br><span class="line">       `hMMMMMMd/          /dMMMMMMh`          --------</span><br><span class="line">        `sMMMMMMMd:      :mMMMMMMMs`           OS: Proxmox VE 7.1-10 x86_64</span><br><span class="line">`-/+oo+/:`.yMMMMMMMh-  -hMMMMMMMy.`:/+oo+/-`   Kernel: 5.15.19-2-pve</span><br><span class="line">`:oooooooo/`-hMMMMMMMyyMMMMMMMh-`/oooooooo:`   Uptime: 11 days, 20 hours, 10 mins</span><br><span class="line">  `/oooooooo:`:mMMMMMMMMMMMMm:`:oooooooo/`     Packages: 784 (dpkg)</span><br><span class="line">    ./ooooooo+- +NMMMMMMMMN+ -+ooooooo/.       Shell: bash 5.1.4</span><br><span class="line">      .+ooooooo+-`oNMMMMNo`-+ooooooo+.         Terminal: /dev/pts/0</span><br><span class="line">        -+ooooooo/.`sMMs`./ooooooo+-           CPU: AMD Ryzen 9 5900HX with Radeon Graphics (16) @ 3.300GHz</span><br><span class="line">          :oooooooo/`..`/oooooooo:             GPU: AMD ATI 05:00.0 Cezanne</span><br><span class="line">          :oooooooo/`..`/oooooooo:             Memory: 26043MiB / 31504MiB</span><br><span class="line">        -+ooooooo/.`sMMs`./ooooooo+-</span><br><span class="line">      .+ooooooo+-`oNMMMMNo`-+ooooooo+.</span><br><span class="line">    ./ooooooo+- +NMMMMMMMMN+ -+ooooooo/.</span><br><span class="line">  `/oooooooo:`:mMMMMMMMMMMMMm:`:oooooooo/`</span><br><span class="line">`:oooooooo/`-hMMMMMMMyyMMMMMMMh-`/oooooooo:`</span><br><span class="line">`-/+oo+/:`.yMMMMMMMh-  -hMMMMMMMy.`:/+oo+/-`</span><br><span class="line">        `sMMMMMMMm:      :dMMMMMMMs`</span><br><span class="line">       `hMMMMMMd/          /dMMMMMMh`</span><br><span class="line">         `://:`              `://:`</span><br></pre></td></tr></table></figure>
+
+<p>我装了PVE作为宿主机，分了一个Ubuntu虚拟机来跑docker服务，一个Arch容器来作为开发环境。虽然是远程开发机，但感谢VS-CODE remote，让开发CLI程序体验跟本地开发高度一致，当然GUI程序开发比如App开发等还不行。开发环境用Arch主要是因为Arch的滚动升级的特性可以保持相关依赖的软件包都是最新，用最新软件包除了心理上满足外也能第一时间了解到相关软件的更新迭代信息。</p>
+<h2 id="整体体验"><a href="#整体体验" class="headerlink" title="整体体验"></a>整体体验</h2><p>MBA + MiniPC这套环境对我来说很舒服了，相比之前的一台MBP，极大提升了性能可扩展性，而且花费还少。软件上MBA只需配好ssh和VPN，装一个VS-CODE就够了，不管在哪带着MBA只要有网就行，另外开发环境自由度也很高，有了大内存大硬盘想装什么虚拟机都可以。</p>
+<h2 id="数码产品税"><a href="#数码产品税" class="headerlink" title="数码产品税"></a>数码产品税</h2><p>数码产品算得上保值率最低的商品了，想想5年前的手机有多少人用，10年前的呢，不管当时买的多贵，到现在基本就是电子废品了。硬件商一直推出性能更强悍的芯片，但软件商也一直在蚕食硬件带来的提升，甚至不再提供老设备的软件更新，导致大家隔几年就想换个手机、电脑。当然厂商通过创新、改善使用体验带来的提升也很大。所以怎么说呢，人就是矛盾的，消费主义陷阱大概就是这样吧。其实还是希望看到体验到更多的新产品，同时也提醒自己要找到需求和消费的平衡点，少交点数码产品税。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%98%E8%85%BE/" rel="tag"># 折腾</a>
+              <a href="/tags/%E9%9A%8F%E6%83%B3/" rel="tag"># 随想</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/14/asyncio-celery/" rel="prev" title="asyncio+celery">
+      <i class="fa fa-chevron-left"></i> asyncio+celery
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">设备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0%E6%9C%AC"><span class="nav-number">1.1.</span> <span class="nav-text">笔记本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MiniPC"><span class="nav-number">1.2.</span> <span class="nav-text">MiniPC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E4%BD%93%E4%BD%93%E9%AA%8C"><span class="nav-number">2.</span> <span class="nav-text">整体体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%A0%81%E4%BA%A7%E5%93%81%E7%A8%8E"><span class="nav-number">3.</span> <span class="nav-text">数码产品税</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">strongbugman</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">strongbugman</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
